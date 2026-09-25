@@ -249,3 +249,43 @@
   object-fit: contain;
   object-position: center;
 }
+/* =========================
+   FKS — PROJECT 01 FINAL
+   ========================= */
+
+.project-fks {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+.project-fks img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .project-fks {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  .project-fks {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .project-fks img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
