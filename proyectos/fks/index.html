@@ -1,0 +1,194 @@
+/* ==================================================
+   FKS — CASE STUDY
+================================================== */
+
+.case-page {
+  background: #f4f1eb;
+  color: #0a0a0a;
+}
+
+.fks-case-hero {
+  padding: 150px 32px 32px;
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: 32px;
+  min-height: 100vh;
+}
+
+.fks-case-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 30px;
+}
+
+.fks-case-info > span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.fks-case-info h1 {
+  margin: 25px 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(54px, 7vw, 120px);
+  line-height: .86;
+  letter-spacing: -.07em;
+}
+
+.fks-case-info p {
+  max-width: 430px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.fks-case-cover {
+  min-height: 720px;
+  overflow: hidden;
+  background: #080808;
+}
+
+.fks-case-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* INTRO */
+
+.fks-intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.fks-intro h2 {
+  margin: 0 0 40px;
+  font-size: clamp(55px, 7vw, 110px);
+  line-height: .92;
+  letter-spacing: -.06em;
+}
+
+.fks-intro p {
+  max-width: 760px;
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+
+/* PROJECT DETAILS */
+
+.fks-details {
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.fks-details div {
+  padding: 35px 20px 35px 0;
+}
+
+.fks-details span {
+  display: block;
+  margin-bottom: 12px;
+
+  font-size: 10px;
+  letter-spacing: .16em;
+}
+
+.fks-details strong {
+  font-size: 15px;
+}
+
+
+/* STATEMENT */
+
+.fks-statement {
+  min-height: 75vh;
+  background: #090909;
+  color: #d4af37;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 60px 30px;
+}
+
+.fks-statement p {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+
+  font-size: clamp(70px, 12vw, 190px);
+  line-height: .85;
+  letter-spacing: -.07em;
+}
+
+.fks-statement span {
+  margin-top: 35px;
+  color: #fff;
+
+  font-size: 12px;
+  letter-spacing: .35em;
+}
+
+
+/* NEXT SECTION */
+
+.fks-coming {
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.fks-coming h2 {
+  margin: 30px 0 0;
+
+  font-size: clamp(70px, 10vw, 160px);
+  line-height: .83;
+  letter-spacing: -.07em;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .fks-case-hero {
+    padding: 110px 18px 18px;
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .fks-case-info {
+    padding: 40px 0 20px;
+  }
+
+  .fks-case-cover {
+    min-height: 480px;
+  }
+
+  .fks-intro {
+    grid-template-columns: 1fr;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .fks-details {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fks-statement {
+    min-height: 60vh;
+  }
+
+}
