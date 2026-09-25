@@ -289,3 +289,9 @@
     object-position: center;
   }
 }
+/* EMERGENCIA — mostrar contenido aunque falle JavaScript */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
