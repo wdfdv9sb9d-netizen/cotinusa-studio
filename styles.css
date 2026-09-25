@@ -233,3 +233,19 @@
     height:60px;
   }
 }
+/* FKS — imagen del proyecto 01 */
+.project-fks {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #0b0b0b;
+}
+
+.project-fks img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
