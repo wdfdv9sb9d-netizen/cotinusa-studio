@@ -1,0 +1,23 @@
+{
+ "name": "Cotinusa Studio",
+ "short_name": "Cotinusa",
+ "description": "Branding, diseño web, software e IA para negocios. Ideas que visten marcas.",
+ "start_url": "/",
+ "scope": "/",
+ "display": "standalone",
+ "lang": "es",
+ "background_color": "#080a10",
+ "theme_color": "#080a10",
+ "icons": [
+  {
+   "src": "/apple-touch-icon.png",
+   "sizes": "180x180",
+   "type": "image/png"
+  },
+  {
+   "src": "/favicon-32.png",
+   "sizes": "32x32",
+   "type": "image/png"
+  }
+ ]
+}

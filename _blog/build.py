@@ -14,9 +14,9 @@ def social_html():
     items=''.join(f'<a href="{e(s["url"])}" target="_blank" rel="noopener me" aria-label="{e(s["name"])}"><span>{ICON.get(s["name"],s["name"][:2])}</span>{e(s["name"])}</a>' for s in social)
     return f'<!--SOCIAL--><div class="coti-social" aria-label="Redes sociales">{items}</div><!--/SOCIAL-->'
 def head(title,desc,url,img,typ="website",extra=""):
-    return f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    return f'''<!doctype html><html lang="es"><head><style>img[width]{{height:auto}}</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow,max-image-preview:large">
-<meta property="og:type" content="{typ}"><meta property="og:site_name" content="Cotinusa Studio"><meta property="og:locale" content="es_ES"><meta property="og:url" content="{url}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="{BASE+img}"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="{typ}"><meta property="og:site_name" content="Cotinusa Studio"><meta property="og:locale" content="es_ES"><meta property="og:url" content="{url}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="{BASE+img}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}"><meta name="twitter:image" content="{BASE+img}"><link rel="manifest" href="/site.webmanifest">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#080a10">
 <link rel="alternate" type="application/rss+xml" title="Blog Cotinusa Studio" href="/feed.xml">
 <link rel="stylesheet" href="/studio-2.css"><link rel="stylesheet" href="/blog.css">{extra}</head><body>'''
@@ -34,14 +34,14 @@ os.makedirs(os.path.join(ROOT,'blog'),exist_ok=True)
 for i,p in enumerate(posts):
     url=f"{BASE}/blog/{p['slug']}"
     ld={"@context":"https://schema.org","@type":"BlogPosting","headline":p['title'],"description":p['description'],"image":BASE+p['image'],"datePublished":p['date'],"dateModified":p.get('updated',p['date']),"inLanguage":"es-ES","mainEntityOfPage":url,
-        "author":{"@type":"Organization","name":"Cotinusa Studio","url":BASE+"/"},"publisher":{"@type":"Organization","name":"Cotinusa Studio","logo":{"@type":"ImageObject","url":BASE+"/assets/cotinusa-logo-supreme.webp"}}}
+        "author":{"@type":"Person","name":"Javier Rugero Gómez","url":BASE+"/#metodo"},"publisher":{"@type":"Organization","name":"Cotinusa Studio","logo":{"@type":"ImageObject","url":BASE+"/assets/cotinusa-logo-supreme.webp"}}}
     bc={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Blog","item":BASE+"/blog"},{"@type":"ListItem","position":3,"name":p['title'],"item":url}]}
     extra=f'<meta property="article:published_time" content="{p["date"]}"><script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(bc,ensure_ascii=False)}</script>'
     rel=[q for q in posts if q is not p][:2]
     relh=''.join(f'<a class="post-card" href="/blog/{q["slug"]}"><img loading="lazy" src="{q["image"]}" alt="{e(q["image_alt"])}"><div><span class="pill">{e(q["category"])}</span><h3>{e(q["title"])}</h3></div></a>' for q in rel)
     page=head(p['title']+" | Cotinusa Studio",p['description'],url,p['image'],"article",extra)+NAV+f'''<main class="post container"><nav class="crumbs" aria-label="Migas de pan"><a href="/">Inicio</a> / <a href="/blog">Blog</a> / <span>{e(p["category"])}</span></nav>
-<article><header><div class="eyebrow">{e(p["category"])} · <time datetime="{p["date"]}">{fecha(p["date"])}</time></div><h1>{e(p["title"])}</h1><p class="lead">{e(p["description"])}</p></header>
-<img class="post-hero" src="{p["image"]}" alt="{e(p["image_alt"])}"><div class="post-body">{body_html(p["body"])}</div>
+<article><header><div class="eyebrow">{e(p["category"])} · <time datetime="{p["date"]}">{fecha(p["date"])}</time> · Por Javier Rugero Gómez</div><h1>{e(p["title"])}</h1><p class="lead">{e(p["description"])}</p></header>
+<img class="post-hero" width="1600" height="900" src="{p["image"]}" alt="{e(p["image_alt"])}"><div class="post-body">{body_html(p["body"])}</div>
 <aside class="post-cta"><strong>¿Necesitas logo y web para tu negocio?</strong><span>Pack Lanzamiento: logo + web con WhatsApp en 7 días por 490 €.</span><a class="btn btn-primary" href="/lanzamiento">Ver el pack →</a></aside></article>
 <section class="related"><h2>Sigue leyendo</h2><div class="post-grid">{relh}</div></section></main>'''+footer()
     open(os.path.join(ROOT,'blog',p['slug']+'.html'),'w',encoding='utf-8').write(page)
