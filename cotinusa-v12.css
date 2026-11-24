@@ -16,3 +16,5 @@
 .coti-facts div{border:1px solid rgba(213,182,120,.22);border-radius:16px;padding:14px 18px}
 .coti-facts dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#d5b678;font-weight:700}
 .coti-facts dd{margin:6px 0 0;line-height:1.5}
+ol.method-grid{list-style:none;padding:0}
+ol.method-grid>li{display:flex}ol.method-grid>li>article{flex:1}
