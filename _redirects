@@ -5,3 +5,10 @@
 /_blog/*            /  301
 /README             /  301
 /README.md          /  301
+/proyectos/fks       /#proyectos  301
+/proyectos/fks/      /#proyectos  301
+/proyectos/*         /#proyectos  301
+/montenegro/*        /#proyectos  301
+/index%20(1).html    /  301
+/index(20261018-002404).html /  301
+/script.js           /  301
