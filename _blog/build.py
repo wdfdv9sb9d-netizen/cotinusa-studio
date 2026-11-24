@@ -15,7 +15,7 @@ def social_html():
     return f'<!--SOCIAL--><div class="coti-social" aria-label="Redes sociales">{items}</div><!--/SOCIAL-->'
 def head(title,desc,url,img,typ="website",extra=""):
     return f'''<!doctype html><html lang="es"><head><style>img[width]{{height:auto}}</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow,max-image-preview:large">
+<title>{e(title)}</title><meta name="description" content="{e(desc)}"><meta name="author" content="Javier Rugero Gómez"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="{typ}"><meta property="og:site_name" content="Cotinusa Studio"><meta property="og:locale" content="es_ES"><meta property="og:url" content="{url}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="{BASE+img}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}"><meta name="twitter:image" content="{BASE+img}"><link rel="manifest" href="/site.webmanifest">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#080a10">
 <link rel="alternate" type="application/rss+xml" title="Blog Cotinusa Studio" href="/feed.xml">
@@ -38,14 +38,14 @@ for i,p in enumerate(posts):
     bc={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Blog","item":BASE+"/blog"},{"@type":"ListItem","position":3,"name":p['title'],"item":url}]}
     extra=f'<meta property="article:published_time" content="{p["date"]}"><script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(bc,ensure_ascii=False)}</script>'
     rel=[q for q in posts if q is not p][:2]
-    relh=''.join(f'<a class="post-card" href="/blog/{q["slug"]}"><img loading="lazy" src="{q["image"]}" alt="{e(q["image_alt"])}"><div><span class="pill">{e(q["category"])}</span><h3>{e(q["title"])}</h3></div></a>' for q in rel)
+    relh=''.join(f'<a class="post-card" href="/blog/{q["slug"]}"><img loading="lazy" width="1600" height="1000" src="{q["image"]}" alt="{e(q["image_alt"])}"><div><span class="pill">{e(q["category"])}</span><h3>{e(q["title"])}</h3></div></a>' for q in rel)
     page=head(p['title']+" | Cotinusa Studio",p['description'],url,p['image'],"article",extra)+NAV+f'''<main class="post container"><nav class="crumbs" aria-label="Migas de pan"><a href="/">Inicio</a> / <a href="/blog">Blog</a> / <span>{e(p["category"])}</span></nav>
 <article><header><div class="eyebrow">{e(p["category"])} · <time datetime="{p["date"]}">{fecha(p["date"])}</time> · Por Javier Rugero Gómez</div><h1>{e(p["title"])}</h1><p class="lead">{e(p["description"])}</p></header>
 <img class="post-hero" width="1600" height="900" src="{p["image"]}" alt="{e(p["image_alt"])}"><div class="post-body">{body_html(p["body"])}</div>
 <aside class="post-cta"><strong>¿Necesitas logo y web para tu negocio?</strong><span>Pack Lanzamiento: logo + web con WhatsApp en 7 días por 490 €.</span><a class="btn btn-primary" href="/lanzamiento">Ver el pack →</a></aside></article>
 <section class="related"><h2>Sigue leyendo</h2><div class="post-grid">{relh}</div></section></main>'''+footer()
     open(os.path.join(ROOT,'blog',p['slug']+'.html'),'w',encoding='utf-8').write(page)
-cards=''.join(f'<a class="post-card" href="/blog/{p["slug"]}"><img loading="lazy" src="{p["image"]}" alt="{e(p["image_alt"])}"><div><span class="pill">{e(p["category"])} · {fecha(p["date"])}</span><h2>{e(p["title"])}</h2><p>{e(p["description"])}</p></div></a>' for p in posts)
+cards=''.join(f'<a class="post-card" href="/blog/{p["slug"]}"><img loading="lazy" width="1600" height="1000" src="{p["image"]}" alt="{e(p["image_alt"])}"><div><span class="pill">{e(p["category"])} · {fecha(p["date"])}</span><h2>{e(p["title"])}</h2><p>{e(p["description"])}</p></div></a>' for p in posts)
 idx=head("Blog de branding, diseño web y SEO | Cotinusa Studio","Consejos prácticos de branding, diseño web, SEO local e inteligencia artificial para negocios. El blog de Cotinusa Studio, estudio creativo en Cádiz.",BASE+"/blog","/assets/og-image.jpg")+NAV+f'''<main class="container blog-index"><div class="eyebrow">COTINUSA / NOTICIAS Y BLOG</div><h1>Ideas para que tu negocio <span class="gold">se vea y venda.</span></h1><p class="lead">Branding, diseño web, SEO local e IA explicados sin tecnicismos.</p><div class="post-grid">{cards}</div></main>'''+footer()
 open(os.path.join(ROOT,'blog.html'),'w',encoding='utf-8').write(idx)
 # RSS
@@ -69,7 +69,7 @@ for f in ('index.html','lanzamiento.html'):
 # ultimas entradas en la portada
 fp=os.path.join(ROOT,'index.html'); s=open(fp,encoding='utf-8').read()
 s=re.sub(r'<!--BLOG-->.*?<!--/BLOG-->','',s,flags=re.S)
-latest=''.join(f'<a class="post-card" href="/blog/{p["slug"]}"><img loading="lazy" src="{p["image"]}" alt="{e(p["image_alt"])}"><div><span class="pill">{e(p["category"])} · {fecha(p["date"])}</span><h3>{e(p["title"])}</h3></div></a>' for p in posts[:3])
+latest=''.join(f'<a class="post-card" href="/blog/{p["slug"]}"><img loading="lazy" width="1600" height="1000" src="{p["image"]}" alt="{e(p["image_alt"])}"><div><span class="pill">{e(p["category"])} · <time datetime="{p["date"]}">{fecha(p["date"])}</time></span><h3>{e(p["title"])}</h3></div></a>' for p in posts[:3])
 sec=f'<!--BLOG--><section id="blog-home"><div class="container"><div class="intro"><div class="eyebrow">NOTICIAS / BLOG</div><h2>Últimas ideas del <span class="gold">estudio.</span></h2></div><div class="post-grid">{latest}</div><div class="actions"><a class="btn btn-secondary" href="/blog">Ver todo el blog ↗</a></div></div></section><!--/BLOG-->'
 s=s.replace('<section id="preguntas"',sec+'<section id="preguntas"',1)
 open(fp,'w',encoding='utf-8').write(s)
