@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pack Lanzamiento: Logo + Web en 7 días por 490 € | Cotinusa Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0A0A12;--bg2:#12121d;--card:#161624;--line:#2a2a3d;--gold:#C9A227;--gold2:#E8C766;--txt:#F4F2EC;--mut:#A7A5B5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(1px 1px at 12% 20%,#fff8 50%,transparent),radial-gradient(1px 1px at 72% 12%,#fff6 50%,transparent),
+    radial-gradient(1px 1px at 40% 70%,#fff5 50%,transparent),radial-gradient(1px 1px at 88% 60%,#fff6 50%,transparent),
+    radial-gradient(1px 1px at 25% 90%,#fff4 50%,transparent),radial-gradient(700px 500px at 80% -10%,#C9A22722,transparent 70%),
+    radial-gradient(600px 500px at -10% 40%,#C9A22714,transparent 70%)}
+  main,header,footer{position:relative;z-index:1}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:Archivo,sans-serif;line-height:1.05;letter-spacing:-.02em}
+  a{color:inherit}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .logo{font-family:Archivo;font-weight:900;letter-spacing:.14em;font-size:14px}
+  .logo span{color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#141008;font-weight:700;
+    padding:15px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font-size:16px;box-shadow:0 8px 30px #C9A22740;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line);box-shadow:none}
+  .nav-cta{padding:10px 18px;font-size:14px}
+  .hero{padding:70px 0 90px;text-align:center}
+  .tag{display:inline-block;border:1px solid #C9A22766;color:var(--gold2);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:26px}
+  .hero h1{font-size:clamp(40px,7vw,82px);font-weight:900}
+  .hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--mut);font-size:clamp(17px,2.2vw,21px);max-width:640px;margin:24px auto 36px}
+  .hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .price-pill{margin-top:30px;color:var(--mut);font-size:14px}
+  .price-pill b{color:var(--txt);font-size:22px;font-family:Archivo}
+  section{padding:70px 0;border-top:1px solid #ffffff0d}
+  .eyebrow{color:var(--gold);font-weight:700;letter-spacing:.16em;font-size:12px;text-transform:uppercase;margin-bottom:12px}
+  h2{font-size:clamp(30px,4.5vw,48px);font-weight:800;margin-bottom:16px}
+  .lead{color:var(--mut);max-width:620px;font-size:18px}
+  .grid{display:grid;gap:18px;margin-top:40px}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .card{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:20px;padding:28px}
+  .card h3{font-size:22px;margin:14px 0 8px}
+  .card p,.card li{color:var(--mut);font-size:15px}
+  .card ul{list-style:none;margin-top:10px}
+  .card li{padding:6px 0 6px 26px;position:relative}
+  .card li::before{content:"✦";position:absolute;left:0;color:var(--gold)}
+  .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#C9A2271f;color:var(--gold2);font-size:20px}
+  .step .n{font-family:Archivo;font-weight:900;font-size:38px;color:var(--gold)}
+  .step .d{color:var(--gold2);font-size:13px;font-weight:600;margin-top:2px}
+  .offer{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;background:radial-gradient(500px 300px at 100% 0,#C9A22722,transparent),var(--card);border:1px solid #C9A22755;border-radius:28px;padding:44px}
+  .offer .big{font-family:Archivo;font-weight:900;font-size:clamp(56px,9vw,92px);line-height:1}
+  .offer .big small{font-size:18px;color:var(--mut);font-weight:600}
+  .strike{color:var(--mut);text-decoration:line-through;font-size:15px}
+  .seats{display:inline-block;margin-top:14px;background:#C9A2271f;color:var(--gold2);padding:6px 12px;border-radius:8px;font-size:13px;font-weight:600}
+  .who{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .who span{border:1px solid var(--line);padding:10px 16px;border-radius:999px;color:var(--txt);font-size:15px;background:var(--bg2)}
+  .work .card{min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(160deg,#1f1a0c,#12121d 60%)}
+  .work .card small{color:var(--gold);font-weight:600;letter-spacing:.1em;font-size:11px;text-transform:uppercase}
+  .work .card{min-height:0;padding:0;overflow:hidden;justify-content:flex-start}
+  .work .card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
+  .work .card .in{padding:20px 22px 24px}
+  details{border-bottom:1px solid var(--line);padding:20px 0}
+  summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+  summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--mut);margin-top:10px}
+  form{display:grid;gap:12px}
+  input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--txt);border-radius:12px;padding:14px;font:inherit;font-size:15px}
+  input:focus,select:focus,textarea:focus{outline:2px solid #C9A22788;border-color:transparent}
+  label{font-size:13px;color:var(--mut);font-weight:600}
+  .final{text-align:center}
+  .final h2{max-width:760px;margin:0 auto 18px}
+  .contact-line{color:var(--mut);margin-top:22px;font-size:15px}
+  footer{padding:40px 0;color:var(--mut);font-size:13px;border-top:1px solid #ffffff0d;text-align:center}
+  .note{font-size:12px;color:var(--mut);margin-top:10px}
+  @media (max-width:760px){.offer{grid-template-columns:1fr;padding:28px}.nav-cta{display:none}section{padding:56px 0}}
+</style>
+<meta name="description" content="Logo profesional y página web con WhatsApp lista en 7 días por 490 €. Pack Lanzamiento de Cotinusa Studio, estudio de branding y diseño web en Cádiz."><link rel="canonical" href="https://www.cotinusastudio.es/lanzamiento"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="Cotinusa Studio"><meta property="og:locale" content="es_ES"><meta property="og:url" content="https://www.cotinusastudio.es/lanzamiento"><meta property="og:title" content="Pack Lanzamiento: Logo + Web en 7 días por 490 € | Cotinusa Studio"><meta property="og:description" content="Logo profesional y página web con WhatsApp lista en 7 días por 490 €. Pack Lanzamiento de Cotinusa Studio, estudio de branding y diseño web en Cádiz."><meta property="og:image" content="https://www.cotinusastudio.es/assets/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#080a10"><link rel="stylesheet" href="/blog.css"><link rel="alternate" type="application/rss+xml" title="Blog Cotinusa Studio" href="/feed.xml"></head>
+<body>
+<header class="wrap">
+  <nav>
+    <a class="logo" href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none"><img src="assets/cotinusa-logo-supreme.webp" alt="Logo COTINUSA" width="34" height="34" style="border-radius:8px">COTINUSA <span>STUDIO</span></a>
+    <a class="btn nav-cta" href="#reservar">Reservar mi plaza</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="tag">✦ Pack Lanzamiento · solo 3 plazas esta semana</div>
+    <h1>Tu marca y tu web,<br><em>listas en 7 días.</em></h1>
+    <p>Logo profesional + página web con botón de WhatsApp para que tus clientes te encuentren, confíen y te escriban. Sin líos, con precio cerrado.</p>
+    <div class="ctas">
+      <a class="btn" href="#reservar">Quiero mi Pack Lanzamiento →</a>
+      <a class="btn ghost" href="#incluye">Ver qué incluye</a>
+    </div>
+    <div class="price-pill">Todo por <b>490 €</b> + IVA · entrega en 7 días</div>
+  </div>
+
+  <section id="incluye">
+    <div class="wrap">
+      <div class="eyebrow">Qué incluye</div>
+      <h2>Todo lo que necesitas para salir a vender.</h2>
+      <p class="lead">Una imagen que transmite confianza y una web pensada para convertir visitas en mensajes, no para decorar.</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="ico">◆</div>
+          <h3>Logo e identidad</h3>
+          <ul><li>3 propuestas de logo</li><li>Paleta de colores y tipografías</li><li>Archivos para web, redes e imprenta</li><li>2 rondas de cambios</li></ul>
+        </div>
+        <div class="card">
+          <div class="ico">▭</div>
+          <h3>Landing page</h3>
+          <ul><li>Web de 1 página, adaptada a móvil</li><li>Botón de WhatsApp y formulario</li><li>Textos que venden, escritos por nosotros</li><li>SEO básico y Google Maps</li></ul>
+        </div>
+        <div class="card">
+          <div class="ico">✦</div>
+          <h3>Kit para redes</h3>
+          <ul><li>Foto de perfil y portada</li><li>3 plantillas para publicar</li><li>Guía rápida de uso de tu marca</li><li>Todo editable</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Para quién es</div>
+      <h2>Para negocios que quieren verse<br>tan bien como trabajan.</h2>
+      <div class="who">
+        <span>Bares y restaurantes</span><span>Reformas y construcción</span><span>Tiendas y comercios</span><span>Autónomos y profesionales</span><span>Centros de estética y deporte</span><span>Negocios que empiezan</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Cómo funciona</div>
+      <h2>De idea a marca en 7 días.</h2>
+      <div class="grid g4">
+        <div class="card step"><div class="n">01</div><div class="d">Día 1</div><h3>Descubrir</h3><p>Llamada de 20 minutos para entender tu negocio y tu cliente.</p></div>
+        <div class="card step"><div class="n">02</div><div class="d">Días 2–3</div><h3>Diseñar</h3><p>Te presentamos 3 propuestas de logo y eliges una.</p></div>
+        <div class="card step"><div class="n">03</div><div class="d">Días 4–6</div><h3>Construir</h3><p>Montamos tu web con tu nueva marca y tus textos.</p></div>
+        <div class="card step"><div class="n">04</div><div class="d">Día 7</div><h3>Lanzar</h3><p>Web publicada, archivos entregados y listo para vender.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap work">
+      <div class="eyebrow">Trabajos del estudio</div>
+      <h2>Marcas que ya hemos creado.</h2>
+      <div class="grid g3">
+        <div class="card"><img src="assets/PROYECTOS/fks.webp" alt="Proyecto FKS" loading="lazy"><div class="in"><small>Streetwear</small><h3>FKS</h3><p>Branding, diseño de producto y propuesta de ecommerce.</p></div></div>
+        <div class="card"><img src="assets/PROYECTOS/titania.webp" alt="Proyecto Titania" loading="lazy"><div class="in"><small>Construcción</small><h3>Titania</h3><p>Imagen de marca para una empresa constructora.</p></div></div>
+        <div class="card"><img src="assets/PROYECTOS/montenegro.webp" alt="Proyecto Montenegro Gastrobar" loading="lazy"><div class="in"><small>Hostelería</small><h3>Montenegro Gastrobar</h3><p>Identidad y soluciones digitales para hostelería.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservar">
+    <div class="wrap">
+      <div class="offer">
+        <div>
+          <div class="eyebrow">La oferta</div>
+          <div class="strike">Logo + web por separado: desde 1.490 €</div>
+          <div class="big">490 € <small>+ IVA</small></div>
+          <p class="lead" style="margin-top:14px">Logo, landing page y kit para redes. Precio cerrado, sin sorpresas. Dominio y hosting aparte (te ayudamos a contratarlos, desde unos pocos euros al mes).</p>
+          <div class="seats">Solo 3 plazas por semana para cumplir los 7 días</div>
+        </div>
+        <form id="f">
+          <div><label for="n">Tu nombre</label><input id="n" required placeholder="Ej. Laura"></div>
+          <div><label for="b">Tu negocio</label><input id="b" required placeholder="Ej. Bar La Caleta"></div>
+          <div><label for="t">Sector</label>
+            <select id="t"><option>Hostelería</option><option>Reformas / construcción</option><option>Comercio</option><option>Profesional / autónomo</option><option>Otro</option></select></div>
+          <div><label for="m">¿Qué necesitas? (opcional)</label><textarea id="m" rows="2" placeholder="Ej. no tengo logo ni web"></textarea></div>
+          <button class="btn" type="submit" style="justify-content:center">Reservar por WhatsApp →</button>
+          <div class="note">Se abrirá WhatsApp con tu mensaje listo. Si no se abre, escríbenos al 640 998 402. Este formulario no guarda datos en la web. <a href="/privacidad" style="color:#E8C766">Privacidad</a>.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Lo que nos suelen preguntar.</h2>
+      <details><summary>¿De verdad está en 7 días?</summary><p>Sí, siempre que nos pases la información del negocio el primer día y respondas a las propuestas en 24 horas. Por eso solo cogemos 3 proyectos por semana.</p></details>
+      <details><summary>¿Y si no me gusta ningún logo?</summary><p>Tienes 2 rondas de cambios incluidas. Trabajamos contigo hasta que la propuesta elegida te represente.</p></details>
+      <details><summary>¿Cómo se paga?</summary><p>50 % al reservar y 50 % en la entrega. Factura con IVA.</p></details>
+      <details><summary>¿La web es mía?</summary><p>Sí. Te entregamos todos los archivos y accesos. Si quieres, después podemos encargarnos del mantenimiento.</p></details>
+      <details><summary>¿Y si después necesito algo más grande?</summary><p>El Pack Lanzamiento es el primer paso. Cuando crezcas, lo ampliamos a una web completa, tienda online, panel de gestión o automatizaciones con IA.</p></details>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="eyebrow">Las ideas no tienen límites</div>
+      <h2>¿Tienes un negocio? Hagámoslo marca esta semana.</h2>
+      <a class="btn" href="#reservar">Reservar mi plaza</a>
+      <div class="contact-line">WhatsApp 640 998 402 · hola@cotinusastudio.es · Estudio en Cádiz</div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Cotinusa Studio · <a href="/">Volver a la web</a> · <a href="/privacidad">Aviso legal y privacidad</a><!--SOCIAL--><div class="coti-social" aria-label="Redes sociales"><a href="https://www.instagram.com/cotinusastudio/" target="_blank" rel="noopener me" aria-label="Instagram"><span>IG</span>Instagram</a><a href="https://www.tiktok.com/@cotinusastudio" target="_blank" rel="noopener me" aria-label="TikTok"><span>TT</span>TikTok</a><a href="https://x.com/cotinusastudio" target="_blank" rel="noopener me" aria-label="X"><span>X</span>X</a><a href="https://www.fiverr.com/cotinusastudio" target="_blank" rel="noopener me" aria-label="Fiverr"><span>Fi</span>Fiverr</a><a href="https://www.upwork.com/freelancers/~01666c66100fb35811" target="_blank" rel="noopener me" aria-label="Upwork"><span>Up</span>Upwork</a><a href="https://wa.me/34640998402" target="_blank" rel="noopener me" aria-label="WhatsApp"><span>WA</span>WhatsApp</a></div><!--/SOCIAL--></footer>
+
+<script>
+  document.getElementById('f').addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = function(id){ return document.getElementById(id).value.trim(); };
+    var msg = 'Hola Cotinusa, quiero el Pack Lanzamiento (logo + web en 7 días).\n' +
+      'Nombre: ' + v('n') + '\nNegocio: ' + v('b') + '\nSector: ' + v('t') +
+      (v('m') ? '\nNecesito: ' + v('m') : '');
+    var a = document.createElement('a');
+    a.href = 'https://wa.me/34640998402?text=' + encodeURIComponent(msg);
+    a.target = '_blank'; a.rel = 'noopener';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+</script>
+</body>
+</html>
